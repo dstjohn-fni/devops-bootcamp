@@ -4,10 +4,16 @@ pipeline {
         nodejs 'NodeJS_12.16.1'
     }
     stages {
-        stage('Hello_Moh') {
+        stage('Build') {
             steps {
-                echo 'Hello Moh'
+                echo 'Building your code'
                 sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing your code'
+                sh 'npm test'
             }
         }
     }
