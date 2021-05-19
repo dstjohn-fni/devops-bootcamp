@@ -4,7 +4,7 @@ pipeline {
         nodejs 'NodeJS_12.16.1'
     }
     stages {
-        stage('Hello') {
+        stage('Hello_Moh') {
             steps {
                 echo 'Hello Moh'
                 sh 'npm install'
