@@ -19,10 +19,6 @@ pipeline {
         stage('SonarQube') {
             steps {
                 echo 'Qubing your code'
-                withSonarQubeEnv('My SonarQube Server') {
-                    sh 'sonar-scanner'
-                }
-                //sh "/home/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqubescanner/bin/sonar-scanner"
             }
         }
     }
