@@ -19,11 +19,7 @@ pipeline {
         stage('SonarQube') {
             steps {
                 echo 'Qubing your code'
-                def scannerHome = tool 'SonarQube-4.6.2';
-                    withSonarQubeEnv("sonarqube-container") {
-                        sh '${tool("SonarQube-4.6.2")}/bin/sonar-scanner'
-                    }
-               }
+                sh "/home/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqubescanner/bin/sonar-scanner"
             }
         }
     }
