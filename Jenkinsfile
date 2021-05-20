@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         nodejs 'NodeJS_12.16.1'
+        //tool name: 'SonarQube-4.6.2', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     }
     stages {
         stage('Build') {
