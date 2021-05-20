@@ -2,7 +2,6 @@ pipeline {
     agent any
     tools {
         nodejs 'NodeJS_12.16.1'
-        hudson.plugins.sonar.SonarRunnerInstallation 'SonarQube-4.6.2'
     }
     stages {
         stage('Build') {
@@ -20,7 +19,11 @@ pipeline {
         stage('SonarQube') {
             steps {
                 echo 'Qubing your code'
-                sh '/home/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqubescanner/bin/sonar-scanner'
+                def scannerHome = tool 'SonarQube-4.6.2';
+                    withSonarQubeEnv("sonarqube-container") {
+                        sh '${tool("SonarQube-4.6.2")}/bin/sonar-scanner'
+                    }
+               }
             }
         }
     }
