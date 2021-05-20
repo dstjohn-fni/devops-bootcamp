@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         nodejs 'NodeJS_12.16.1'
+        hudson.plugins.sonar.SonarRunnerInstallation 'SonarQube-4.6.2'
     }
     stages {
         stage('Build') {
@@ -14,6 +15,12 @@ pipeline {
             steps {
                 echo 'Testing your code'
                 sh 'npm test'
+            }
+        }
+        stage('SonarQube') {
+            steps {
+                echo 'Qubing your code'
+                sh '/home/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqubescanner/bin/sonar-scanner'
             }
         }
     }
