@@ -19,7 +19,7 @@ pipeline {
         stage('SonarQube') {
             steps {
                 echo 'Qubing your code'
-                sh "/home/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqubescanner/bin/sonar-scanner"
+                //sh "/home/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqubescanner/bin/sonar-scanner"
             }
         }
     }
