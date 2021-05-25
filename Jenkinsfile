@@ -32,7 +32,7 @@ pipeline {
                         echo $AWS_ACCESS_KEY_ID
                         echo *******************************************
                         wget https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/docker-ce-cli_18.09.9~3-0~ubuntu-bionic_amd64.deb
-                        dpkg -i ./docker-ce-cli_18.09.9~3-0ubuntu-bionic_amd64.deb
+                        dpkg -i ./docker-ce-cli_18.09.9~3-0~ubuntu-bionic_amd64.deb
                         apt-get update
                         apt-get install -y awscli
                         docker build -t workshopuser9:latest .
